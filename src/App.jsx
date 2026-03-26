@@ -25,7 +25,7 @@ const AgriShieldCanvas = () => {
   // Custom UI Component for the Editorial Mobile Preview
   const MobilePreview = ({ type }) => {
     return (
-      <div className="w-[300px] h-[600px] bg-[#1a1c18] rounded-[3rem] p-3 shadow-2xl relative border-[6px] border-[#2e342b]">
+      <div className="w-[280px] sm:w-[300px] h-[560px] sm:h-[600px] bg-[#1a1c18] rounded-[3rem] p-3 shadow-2xl relative border-[6px] border-[#2e342b] mx-auto">
         <div className="w-full h-full bg-[#f8faf2] rounded-[2.5rem] overflow-hidden flex flex-col relative font-['Plus_Jakarta_Sans']">
           {/* Notch */}
           <div className="w-32 h-6 bg-[#1a1c18] absolute top-0 left-1/2 transform -translate-x-1/2 rounded-b-2xl z-30"></div>
@@ -232,33 +232,33 @@ const AgriShieldCanvas = () => {
   return (
     <div className="min-h-screen bg-[#f8faf2] font-['Plus_Jakarta_Sans'] text-[#2e342b]">
       {/* Editorial Header */}
-      <header className="bg-white border-b border-[#ebefe4] py-16 px-6 relative overflow-hidden">
+      <header className="bg-white border-b border-[#ebefe4] py-12 md:py-16 px-4 md:px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#ebefe4] rounded-l-[10rem] opacity-30 -mr-20"></div>
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="bg-[#3c6935] text-white p-3 rounded-2xl shadow-xl shadow-[#3c6935]/20">
-              <Shield size={32} strokeWidth={2.5} />
+          <div className="flex items-center gap-3 mb-6 md:mb-8">
+            <div className="bg-[#3c6935] text-white p-2 md:p-3 rounded-2xl shadow-xl shadow-[#3c6935]/20">
+              <Shield className="w-6 h-6 md:w-8 md:h-8" strokeWidth={2.5} />
             </div>
-            <span className="text-3xl font-black tracking-tighter uppercase">AgriShield</span>
+            <span className="text-2xl md:text-3xl font-black tracking-tighter uppercase">AgriShield</span>
           </div>
-          <h1 className="text-6xl font-black tracking-tighter leading-[1.1] mb-6 max-w-4xl text-[#1a1c18]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.1] mb-4 md:mb-6 max-w-4xl text-[#1a1c18]">
             The Digital Agronomist for <span className="text-[#3c6935]">Myanmar's Dry Zone.</span>
           </h1>
-          <p className="text-xl text-[#5a6156] max-w-2xl leading-relaxed font-medium">
+          <p className="text-lg md:text-xl text-[#5a6156] max-w-2xl leading-relaxed font-medium">
             Bridging the gap between unpredictable climate and market volatility through editorial-grade intelligence and an interconnected super-platform.
           </p>
         </div>
       </header>
 
       {/* The Strategic Argument: Why a Super App? */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <section className="py-16 md:py-24 px-4 md:px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            <div className="text-[#3c6935] font-black text-sm uppercase tracking-[0.3em] mb-4">The Strategic Logic</div>
-            <h2 className="text-4xl font-black text-[#1a1c18] mb-8 leading-tight">
+            <div className="text-[#3c6935] font-black text-xs md:text-sm uppercase tracking-[0.3em] mb-4">The Strategic Logic</div>
+            <h2 className="text-3xl md:text-4xl font-black text-[#1a1c18] mb-6 md:mb-8 leading-tight">
               One Interface.<br />Zero Fragmentation.
             </h2>
-            <p className="text-lg text-[#5a6156] mb-8 leading-relaxed">
+            <p className="text-base md:text-lg text-[#5a6156] mb-8 leading-relaxed">
               The three problems farmers face are deeply interconnected—not separate. A dry spell (Climate) triggers pest outbreaks (Knowledge Gap) forcing early harvest (Market Loss). Solving only one breaks without the others.
             </p>
             
@@ -297,14 +297,14 @@ const AgriShieldCanvas = () => {
       </section>
 
       {/* Editorial Content: The Three Pillars */}
-      <section className="py-24 bg-[#ebefe4]/40 border-y border-[#ebefe4]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <section className="py-16 md:py-24 bg-[#ebefe4]/40 border-y border-[#ebefe4]">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6 md:gap-8">
             <div className="max-w-xl">
-              <h3 className="text-4xl font-black text-[#1a1c18] mb-4">Interconnected Intelligence</h3>
-              <p className="text-[#5a6156]">Toggle between modules to see how the editorial design system adapts to each unique farmer need while maintaining a unified core.</p>
+              <h3 className="text-3xl md:text-4xl font-black text-[#1a1c18] mb-4">Interconnected Intelligence</h3>
+              <p className="text-[#5a6156] text-sm md:text-base">Toggle between modules to see how the editorial design system adapts to each unique farmer need while maintaining a unified core.</p>
             </div>
-            <div className="flex gap-2 p-1.5 bg-white rounded-full border border-[#ebefe4] shadow-sm">
+            <div className="flex gap-2 p-1.5 bg-white rounded-2xl md:rounded-full border border-[#ebefe4] shadow-sm overflow-x-auto w-full md:w-auto hide-scrollbar">
               <button 
                 onClick={() => setActiveTab('climate')}
                 className={`px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'climate' ? 'bg-[#3c6935] text-white shadow-md' : 'text-[#5a6156] hover:bg-gray-50'}`}
@@ -326,8 +326,8 @@ const AgriShieldCanvas = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-5 space-y-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <div className="lg:col-span-5 space-y-8 md:space-y-12">
               {activeTab === 'climate' && (
                 <div className="animate-fade-in">
                   <div className="text-xs font-black text-[#3c6935] uppercase tracking-[0.2em] mb-4">Pillar 01</div>
@@ -396,13 +396,13 @@ const AgriShieldCanvas = () => {
       </section>
 
       {/* Technical Reality Section */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="bg-[#1a1c18] rounded-[4rem] p-12 lg:p-20 text-white relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-1/2 h-full bg-[#3c6935] opacity-10 rounded-l-[10rem]"></div>
-           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="py-16 md:py-24 px-4 md:px-6 max-w-6xl mx-auto">
+        <div className="bg-[#1a1c18] rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 text-white relative overflow-hidden">
+           <div className="absolute top-0 right-0 w-full md:w-1/2 h-1/2 md:h-full bg-[#3c6935] opacity-10 rounded-b-[5rem] md:rounded-b-none md:rounded-l-[10rem]"></div>
+           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               <div>
-                <h3 className="text-4xl font-black mb-8 leading-tight">Built for<br />Myanmar's Reality.</h3>
-                <div className="space-y-8">
+                <h3 className="text-3xl md:text-4xl font-black mb-6 md:mb-8 leading-tight">Built for<br />Myanmar's Reality.</h3>
+                <div className="space-y-6 md:space-y-8">
                   <div className="flex gap-6">
                     <WifiOff className="text-[#bcf0ae] shrink-0" size={32} />
                     <div>
@@ -419,13 +419,13 @@ const AgriShieldCanvas = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-center gap-8">
-                 <div className="bg-white/5 border border-white/10 p-8 rounded-[2.5rem] backdrop-blur-xl">
-                    <div className="text-sm font-bold text-[#bcf0ae] uppercase tracking-widest mb-2">The Scale Potential</div>
-                    <div className="text-5xl font-black mb-4">2.5M</div>
-                    <div className="text-sm text-gray-400">Smallholder farmers in the Dry Zone alone ready for digital intervention.</div>
+              <div className="flex flex-col justify-center gap-6 md:gap-8">
+                 <div className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] backdrop-blur-xl">
+                    <div className="text-xs md:text-sm font-bold text-[#bcf0ae] uppercase tracking-widest mb-2">The Scale Potential</div>
+                    <div className="text-4xl md:text-5xl font-black mb-3 md:mb-4">2.5M</div>
+                    <div className="text-xs md:text-sm text-gray-400">Smallholder farmers in the Dry Zone alone ready for digital intervention.</div>
                  </div>
-                 <button className="w-full bg-[#bcf0ae] text-[#1a1c18] font-black py-5 rounded-2xl text-lg hover:scale-[1.02] transition-transform active:scale-95">
+                 <button className="w-full bg-[#bcf0ae] text-[#1a1c18] font-black py-4 md:py-5 rounded-2xl text-base md:text-lg hover:scale-[1.02] transition-transform active:scale-95">
                     Launch Strategic Pilot
                  </button>
               </div>
