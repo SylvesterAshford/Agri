@@ -154,49 +154,57 @@ const AgriShieldCanvas = () => {
             {type === 'knowledge' && (
               <div className="animate-fade-in">
                 <div className="px-6 mb-6">
-                  <div className="text-[10px] font-bold text-[#5a6156] uppercase tracking-widest mb-1">Peer & Expert</div>
+                  <div className="flex justify-between items-center mb-1">
+                    <div className="text-[10px] font-bold text-[#5a6156] uppercase tracking-widest">Community Pool</div>
+                    <div className="text-[9px] bg-[#ebefe4] text-[#5a6156] px-2 py-0.5 rounded-full font-bold flex items-center gap-1"><WifiOff size={8} /> Offline Ready</div>
+                  </div>
                   <h1 className="text-2xl font-extrabold text-[#2e342b]">Knowledge Hub</h1>
                 </div>
 
                 {/* Featured Expert */}
                 <div className="px-4 mb-6">
-                  <div className="bg-[#d6e8cd] rounded-[2rem] p-4 flex gap-4 items-center border border-[#c8dac0]">
-                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center overflow-hidden">
-                       <Users size={30} className="text-[#3c6935]" />
+                  <div className="bg-[#d6e8cd] rounded-[2rem] p-4 flex gap-4 items-center border border-[#c8dac0] relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-[#3c6935] text-white text-[8px] font-black px-2 py-1 rounded-bl-xl uppercase tracking-wider">Top Ranked</div>
+                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center overflow-hidden shrink-0">
+                       <Shield size={24} className="text-[#3c6935] fill-[#bcf0ae]" />
                     </div>
                     <div>
-                      <div className="flex items-center gap-1">
-                        <span className="text-xs font-bold text-[#2e342b]">Dr. Kyaw Myo</span>
-                        <Shield size={10} className="fill-[#3c6935] text-[#3c6935]" />
+                      <div className="flex items-center gap-1.5 mb-0.5">
+                        <span className="text-xs font-black text-[#2e342b]">Dept. of Agriculture</span>
+                        <div className="bg-[#3c6935] text-white text-[8px] px-1.5 py-0.5 rounded font-black">PRO</div>
                       </div>
-                      <div className="text-[10px] text-[#3c6935] font-bold">Verified Extension Officer</div>
-                      <div className="text-[10px] text-[#5a6156] mt-1 italic">Active now in Nyaung-U</div>
+                      <div className="text-[10px] text-[#3c6935] font-bold leading-tight">Verified Extension Team</div>
+                      <div className="text-[9px] text-[#5a6156] mt-1 font-medium">Bago Region Field Office</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Feed */}
                 <div className="px-6 space-y-6">
+                  {/* Peer interaction */}
                   <div className="border-b border-[#ebefe4] pb-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-6 h-6 rounded-full bg-gray-300"></div>
-                      <span className="text-[10px] font-bold text-[#2e342b]">U Win Aung</span>
-                      <span className="text-[10px] text-[#5a6156]">• 1h ago</span>
+                    <div className="flex items-center justify-between mb-2">
+                       <div className="flex items-center gap-2">
+                         <div className="w-6 h-6 rounded-full bg-[#fbfab5] flex items-center justify-center text-[#6a6b34] text-xs font-bold">K</div>
+                         <div>
+                            <span className="text-[10px] font-bold text-[#2e342b] block">U Kyaw</span>
+                            <span className="text-[8px] text-[#5a6156]">2h ago • Bago Region</span>
+                         </div>
+                       </div>
+                       <div className="bg-[#ebefe4] text-[#5a6156] px-1.5 py-0.5 rounded text-[8px] font-bold text-center">Auto-translated<br/>(Pwo Karen)</div>
                     </div>
                     <p className="text-xs text-[#2e342b] font-medium leading-relaxed mb-3">Does anyone know why the leaves on my chickpea plants are turning yellow from the bottom?</p>
-                    <div className="flex gap-2">
-                      <div className="bg-[#ebefe4] text-[#2e342b] px-3 py-1 rounded-full text-[9px] font-bold flex items-center gap-1">
-                        <Users size={10} /> 14 Responses
-                      </div>
-                      <div className="bg-[#ebefe4] text-[#2e342b] px-3 py-1 rounded-full text-[9px] font-bold">Diseases</div>
+                    {/* Add Ranked Answer Surface preview */}
+                    <div className="bg-[#f8faf2] border-l-2 border-[#3c6935] pl-3 py-2 mb-3 rounded-r-lg">
+                       <div className="text-[9px] font-bold text-[#3c6935] flex items-center gap-1 mb-1"><Zap size={10}/> AI Instant Answer (Tier 1)</div>
+                       <p className="text-[10px] text-[#5a6156] leading-relaxed">Likely Fusarium wilt. Check root discoloration. Waiting for expert verification...</p>
                     </div>
-                  </div>
-
-                  <div className="border-b border-[#ebefe4] pb-4">
-                     <div className="bg-[#f8faf2] border border-[#e5eade] rounded-xl p-3 flex gap-3 items-center">
-                        <Zap size={20} className="text-[#3c6935]" />
-                        <div className="text-[10px] font-bold text-[#2e342b]">New AI Diagnostic Tool: Identify pests instantly with camera scan.</div>
-                     </div>
+                    <div className="flex justify-between items-center">
+                      <div className="bg-[#d6e8cd] text-[#3c6935] px-2 py-1 rounded-full text-[9px] font-bold flex items-center gap-1">
+                        <Users size={10} /> 12 Peers Agree
+                      </div>
+                      <div className="text-[9px] text-[#5a6156] font-bold flex items-center gap-1">Zawgyi <ArrowRight size={8} /> Unicode</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -249,6 +257,54 @@ const AgriShieldCanvas = () => {
           </p>
         </div>
       </header>
+
+      {/* Refined Product Concept - Visual Presentation */}
+      <section className="px-4 md:px-6 max-w-6xl mx-auto -mt-6 md:-mt-8 mb-16 relative z-20">
+        <div className="bg-[#f0f4eb] rounded-[2rem] border border-[#e5eadd] p-6 md:p-10 shadow-lg shadow-[#1a1c18]/5">
+           <div className="text-[10px] md:text-xs font-bold text-[#8c9187] uppercase tracking-widest mb-1.5">Refined Product Concept</div>
+           <h2 className="text-3xl md:text-4xl font-black text-[#1a1c18] mb-4">AgriShield Super App</h2>
+           <p className="text-sm md:text-base text-[#5a6156] leading-relaxed max-w-4xl mb-8">
+              Myanmar's first farmer super app — combining hyperlocal climate intelligence, real-time market price transparency, and a peer-expert knowledge network into one platform accessible on any phone. Built from real dry zone farmer interviews. Designed for Myanmar's language, connectivity, and crops.
+           </p>
+
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-white rounded-[1.5rem] p-5 border border-[#e5eadd] shadow-sm">
+                 <div className="w-2.5 h-2.5 rounded-full bg-[#10b981] mb-3"></div>
+                 <h4 className="font-bold text-[#1a1c18] mb-1">Climate shield</h4>
+                 <p className="text-xs text-[#5a6156]">Predict & protect from weather risk</p>
+              </div>
+              <div className="bg-white rounded-[1.5rem] p-5 border border-[#e5eadd] shadow-sm">
+                 <div className="w-2.5 h-2.5 rounded-full bg-[#3b82f6] mb-3"></div>
+                 <h4 className="font-bold text-[#1a1c18] mb-1">Market lens</h4>
+                 <p className="text-xs text-[#5a6156]">See prices across all townships</p>
+              </div>
+              <div className="bg-white rounded-[1.5rem] p-5 border border-[#e5eadd] shadow-sm">
+                 <div className="w-2.5 h-2.5 rounded-full bg-[#8b5cf6] mb-3"></div>
+                 <h4 className="font-bold text-[#1a1c18] mb-1">Knowledge hub</h4>
+                 <p className="text-xs text-[#5a6156]">AI + experts answer any question</p>
+              </div>
+           </div>
+
+           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-[#f8faf2] rounded-[1.5rem] p-5 text-center flex flex-col items-center justify-center min-h-[100px]">
+                 <div className="text-2xl md:text-3xl font-black text-[#1a1c18] mb-1">3</div>
+                 <div className="text-[10px] md:text-[11px] text-[#5a6156] font-medium leading-tight max-w-[120px]">Core problems solved in one app</div>
+              </div>
+              <div className="bg-[#f8faf2] rounded-[1.5rem] p-5 text-center flex flex-col items-center justify-center min-h-[100px]">
+                 <div className="text-2xl md:text-3xl font-black text-[#1a1c18] mb-1">80%</div>
+                 <div className="text-[10px] md:text-[11px] text-[#5a6156] font-medium leading-tight max-w-[120px]">Farmer tech trust (interviewed)</div>
+              </div>
+              <div className="bg-[#f8faf2] rounded-[1.5rem] p-5 text-center flex flex-col items-center justify-center min-h-[100px]">
+                 <div className="text-2xl md:text-3xl font-black text-[#1a1c18] mb-1">2×</div>
+                 <div className="text-[10px] md:text-[11px] text-[#5a6156] font-medium leading-tight max-w-[120px]">Price gap farmers face at harvest</div>
+              </div>
+              <div className="bg-[#f8faf2] rounded-[1.5rem] p-5 text-center flex flex-col items-center justify-center min-h-[100px]">
+                 <div className="text-2xl md:text-3xl font-black text-[#1a1c18] mb-1">2.5M</div>
+                 <div className="text-[10px] md:text-[11px] text-[#5a6156] font-medium leading-tight max-w-[120px]">Myanmar smallholder farmers</div>
+              </div>
+           </div>
+        </div>
+      </section>
 
       {/* The Strategic Argument: Why a Super App? */}
       <section className="py-16 md:py-24 px-4 md:px-6 max-w-6xl mx-auto">
@@ -362,27 +418,66 @@ const AgriShieldCanvas = () => {
                   </div>
                 </div>
               )}
-              {activeTab === 'knowledge' && (
+                    {activeTab === 'knowledge' && (
                 <div className="animate-fade-in">
-                  <div className="text-xs font-black text-[#3c6935] uppercase tracking-[0.2em] mb-4">Pillar 03</div>
-                  <h4 className="text-4xl font-black text-[#1a1c18] mb-6">Knowledge Hub</h4>
-                  <p className="text-[#5a6156] leading-relaxed mb-8">A trusted network where AI diagnostics meet verified human expertise. Unbiased, commercial-free advice that isn't tied to chemical broker sales.</p>
-                  <div className="bg-[#3c6935] text-white p-6 rounded-[2rem] shadow-xl">
-                     <div className="text-xs font-bold uppercase tracking-widest mb-4 opacity-80">Technology Stack</div>
-                     <ul className="space-y-3">
-                        <li className="flex items-center gap-3 text-sm font-medium">
-                           <div className="w-1.5 h-1.5 bg-[#bcf0ae] rounded-full"></div>
-                           TensorFlow Lite On-Device Vision
-                        </li>
-                        <li className="flex items-center gap-3 text-sm font-medium">
-                           <div className="w-1.5 h-1.5 bg-[#bcf0ae] rounded-full"></div>
-                           Verified Extension Officer Network
-                        </li>
-                        <li className="flex items-center gap-3 text-sm font-medium">
-                           <div className="w-1.5 h-1.5 bg-[#bcf0ae] rounded-full"></div>
-                           Peer-to-Peer Verified Success Stories
-                        </li>
-                     </ul>
+                  <div className="text-[10px] md:text-xs font-black text-[#3c6935] uppercase tracking-[0.2em] mb-3 md:mb-4">Pillar 03</div>
+                  <h4 className="text-3xl md:text-4xl font-black text-[#1a1c18] mb-4 md:mb-6">Knowledge Hub</h4>
+                  <p className="text-sm md:text-base text-[#5a6156] leading-relaxed mb-6 md:mb-8">
+                     A trusting environment replacing fragmented chat groups. We implement a ranked answer surface bringing order to agricultural advice, backed by a persistent data flywheel.
+                  </p>
+                  
+                  {/* The Flow */}
+                  <div className="mb-6 md:mb-8">
+                     <h5 className="text-xs font-bold uppercase tracking-wider text-[#1a1c18] mb-3">4-Step Peer-to-Expert Flow</h5>
+                     <div className="flex border border-[#ebefe4] rounded-2xl overflow-hidden bg-white shadow-sm">
+                        <div className="flex-1 p-2 md:p-3 border-r border-[#ebefe4] text-center">
+                           <div className="text-[10px] md:text-xs font-black text-[#3c6935] mb-1">01</div>
+                           <div className="text-[8px] md:text-[9px] text-[#5a6156] font-bold uppercase leading-tight md:leading-normal">Community<br/>Trigger</div>
+                        </div>
+                        <div className="flex-1 p-2 md:p-3 border-r border-[#ebefe4] text-center bg-[#f8faf2]">
+                           <div className="text-[10px] md:text-xs font-black text-[#3c6935] mb-1">02</div>
+                           <div className="text-[8px] md:text-[9px] text-[#5a6156] font-bold uppercase leading-tight md:leading-normal">AI<br/>Categorizing</div>
+                        </div>
+                        <div className="flex-1 p-2 md:p-3 border-r border-[#ebefe4] text-center">
+                           <div className="text-[10px] md:text-xs font-black text-[#3c6935] mb-1">03</div>
+                           <div className="text-[8px] md:text-[9px] text-[#5a6156] font-bold uppercase leading-tight md:leading-normal">Expert<br/>Verification</div>
+                        </div>
+                        <div className="flex-1 p-2 md:p-3 text-center bg-[#bcf0ae]/30">
+                           <div className="text-[10px] md:text-xs font-black text-[#3c6935] mb-1">04</div>
+                           <div className="text-[8px] md:text-[9px] text-[#3c6935] font-bold uppercase leading-tight md:leading-normal">Knowledge<br/>Loop</div>
+                        </div>
+                     </div>
+                  </div>
+
+                  {/* Tech Stack/Details */}
+                  <div className="bg-[#3c6935] text-white p-6 md:p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden">
+                     <Sun size={150} className="absolute -right-10 -top-10 opacity-10" />
+                     <div className="relative z-10">
+                       <div className="text-[10px] font-bold uppercase tracking-widest mb-6 text-[#bcf0ae]">Technical Implementation</div>
+                       <ul className="space-y-5">
+                          <li className="flex items-start gap-4">
+                             <div className="bg-[#bcf0ae]/20 rounded-xl p-2 shrink-0"><Users size={16} className="text-[#bcf0ae]" /></div>
+                             <div>
+                                <div className="text-sm font-bold mb-1">Extension Officer Dashboard (Phase 1)</div>
+                                <div className="text-xs opacity-80 leading-relaxed font-medium">Dedicated web interface for cooperatives & NGOs to efficiently review and verify Tier-3 localized answers.</div>
+                             </div>
+                          </li>
+                          <li className="flex items-start gap-4">
+                             <div className="bg-[#bcf0ae]/20 rounded-xl p-2 shrink-0"><Zap size={16} className="text-[#bcf0ae]" /></div>
+                             <div>
+                                <div className="text-sm font-bold mb-1">Inclusive Multi-Lingual NLP</div>
+                                <div className="text-xs opacity-80 leading-relaxed font-medium">Auto-transliteration bridging the Zawgyi/Unicode divide, with future-proofing for major ethnic dialects.</div>
+                             </div>
+                          </li>
+                          <li className="flex items-start gap-4">
+                             <div className="bg-[#bcf0ae]/20 rounded-xl p-2 shrink-0"><WifiOff size={16} className="text-[#bcf0ae]" /></div>
+                             <div>
+                                <div className="text-sm font-bold mb-1">Offline-First Feed</div>
+                                <div className="text-xs opacity-80 leading-relaxed font-medium">Ranked community solutions are actively cached locally. Vital agricultural solutions stay accessible deep in remote fields.</div>
+                             </div>
+                          </li>
+                       </ul>
+                     </div>
                   </div>
                 </div>
               )}
